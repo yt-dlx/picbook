@@ -24,7 +24,7 @@ def add_watermark_to_image(input_path, output_path, text, font_path, opacity=50)
     for position in positions:
         draw.text(position, text, font=font, fill=(255, 255, 255, opacity))
     watermarked_image = Image.alpha_composite(image, watermark).convert("RGB")
-    watermarked_image.save(output_path, "JPEG", quality=85, optimize=True)
+    watermarked_image.save(output_path, "JPEG")
     print(f"Watermarked image saved as {output_path}")
 def process_images(input_folder, output_folder, text, font_path):
     os.makedirs(output_folder, exist_ok=True)
